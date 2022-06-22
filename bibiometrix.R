@@ -1,0 +1,8 @@
+setwd("DEFINE DIRECTORY OF FILES")
+getwd()
+library(bibliometrix)
+S=convert2df("DEFINE THE FILE WITH '.bib' extension", dbsource = "wos", format = "bibtex")
+Database=mergeDbSources(S, W, W2, remove.duplicated = TRUE)
+library(openxlsx)
+write.xlsx(Database, file = "EXCEL FILE 'ex: Database.xls'")
+biblioshiny()
